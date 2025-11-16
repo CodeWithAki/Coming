@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon ✨ CodeWithAki</title>
+    <link rel="icon" type="image/x-icon" href="AkiLogo.png">
+
+    <style>
+        @font-face {
+            font-family: Pangolin;
+            src: url("https://dumbiee.neocities.org/font/Pangolin-Regular.ttf");
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url("https://dumbiee.neocities.org/img/B0F66686-1CB0-4C1B-A031-8CCDB741F2E5.png") fixed repeat #c4dbe4;
+            font-family: Pangolin, "Trebuchet MS", sans-serif;
+            font-size: 1em;
+            color: #2b2b2b;
+            text-shadow: 0px 1px #fff;
+            padding: 0px;
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: auto;
+        }
+
+        /* Aki's Color Variables */
+        :root {
+            --main-aqua: #7CD5D9;
+            --web-dev: #C4E02F;
+            --graphic-design: #FFA9DD;
+            --software-dev: #FEB700;
+            --cybersecurity: #99ADFF;
+            --data-ai: #FFE26F;
+        }
+
+        .coming-soon-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2.5em 2em;
+            text-align: center;
+            max-width: 650px;
+            width: 95%;
+            box-shadow: 0.25vw 0 0.5vw rgba(166, 166, 166, 0.3);
+            border: 1px solid transparent;
+            border-image-source: url("https://dumbiee.neocities.org/img/c.png");
+            border-image-repeat: round;
+            border-image-slice: 10;
+            border-image-width: 7px;
+            border-image-outset: 7px;
+            margin: 1em;
+            position: relative;
+        }
+
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--main-aqua);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-family: Pangolin, "Trebuchet MS", sans-serif;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(124, 213, 217, 0.3);
+        }
+
+        .language-toggle:hover {
+            background: var(--software-dev);
+            transform: translateY(-2px);
+        }
+
+        .aki-logo {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto 1.5em;
+
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            color: white;
+
+        }
+
+        h1 {
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            font-size: 2.2em;
+            color: var(--main-aqua);
+            margin-bottom: 0.5em;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            font-size: 1.4em;
+            color: #d1ecfd;
+            margin-bottom: 1em;
+        }
+
+        h3 {
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            font-size: 1.3em;
+            color: var(--main-aqua);
+            margin-top: 0;
+            margin-bottom: 1em;
+        }
+
+        p {
+            line-height: 1.6em;
+            margin-bottom: 1.5em;
+            font-size: 1.05em;
+        }
+
+        .notification-form {
+            background: rgba(124, 213, 217, 0.1);
+            border-radius: 15px;
+            padding: 2em;
+            margin: 2em 0;
+            border: 2px dashed var(--main-aqua);
+        }
+
+        .form-group {
+            margin-bottom: 1.2em;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.4em;
+            font-weight: bold;
+            color: var(--main-aqua);
+            font-size: 1em;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--main-aqua);
+            border-radius: 10px;
+            font-family: Pangolin, "Trebuchet MS", sans-serif;
+            font-size: 1em;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--software-dev);
+            box-shadow: 0 0 10px rgba(254, 183, 0, 0.3);
+        }
+
+        .submit-btn {
+            background: var(--main-aqua);
+            color: white;
+            border: none;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-family: Pangolin, "Trebuchet MS", sans-serif;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            box-shadow: 0 4px 15px rgba(124, 213, 217, 0.3);
+            width: 100%;
+            margin-top: 0.5em;
+        }
+
+        .submit-btn:hover {
+            background: var(--software-dev);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(254, 183, 0, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 1.2em;
+            margin: 2em 0;
+        }
+
+        .countdown-item {
+            background: white;
+            border-radius: 15px;
+            padding: 1em;
+            min-width: 80px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .countdown-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--main-aqua);
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.8em;
+            color: #616161;
+            text-transform: uppercase;
+        }
+
+        .social-links {
+            margin-top: 2em;
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.4em;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+
+        }
+
+        .web-dev { background: var(--web-dev); }
+        .graphic-design { background: var(--graphic-design); }
+        .software-dev { background: var(--software-dev); }
+        .cybersecurity { background: var(--cybersecurity); }
+        .data-ai { background: var(--data-ai); }
+
+        .message {
+            padding: 1em;
+            border-radius: 10px;
+            margin: 1em 0;
+            display: none;
+            font-size: 1em;
+        }
+
+        .success {
+            background: rgba(196, 224, 47, 0.2);
+            border: 2px solid var(--web-dev);
+            color: #2b2b2b;
+        }
+
+        .error {
+            background: rgba(255, 169, 221, 0.2);
+            border: 2px solid var(--graphic-design);
+            color: #2b2b2b;
+        }
+
+        /* RTL support for Arabic */
+        .rtl {
+            direction: rtl;
+            text-align: right;
+        }
+
+        .rtl .form-group {
+            text-align: right;
+        }
+
+        .rtl .language-toggle {
+            right: auto;
+            left: 20px;
+        }
+
+        /* Mobile Responsiveness */
+        @media only screen and (max-width: 768px) {
+            .coming-soon-container {
+                padding: 2em 1.5em;
+                max-width: 90%;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            .countdown {
+                gap: 0.8em;
+            }
+
+            .countdown-item {
+                min-width: 70px;
+                padding: 0.8em;
+            }
+
+            .countdown-number {
+                font-size: 1.6em;
+            }
+
+            .aki-logo {
+                width: 120px;
+                height: 120px;
+                font-size: 2.5em;
+            }
+
+            .language-toggle {
+                top: 15px;
+                right: 15px;
+                font-size: 0.8em;
+                padding: 6px 12px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .coming-soon-container {
+                padding: 1.5em 1em;
+                margin: 0.5em;
+                width: 95%;
+            }
+
+            h1 {
+                font-size: 1.6em;
+            }
+
+            h2 {
+                font-size: 1.1em;
+            }
+
+            .countdown {
+                gap: 0.5em;
+            }
+
+            .countdown-item {
+                min-width: 60px;
+                padding: 0.6em;
+            }
+
+            .countdown-number {
+                font-size: 1.4em;
+            }
+
+            .aki-logo {
+                width: 100px;
+                height: 100px;
+                font-size: 2em;
+            }
+
+            .notification-form {
+                padding: 1.5em;
+            }
+
+            .social-links {
+                gap: 0.8em;
+            }
+
+            .social-link {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2em;
+            }
+
+            .language-toggle {
+                top: 10px;
+                right: 10px;
+                font-size: 0.7em;
+                padding: 5px 10px;
+            }
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(124, 213, 217, 0.1);
+            animation: float 15s infinite ease-in-out;
+            z-index: -1;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            25% { transform: translateY(-15px) translateX(8px); }
+            50% { transform: translateY(-8px) translateX(15px); }
+            75% { transform: translateY(-20px) translateX(-8px); }
+        }
+
+        /* Hide bubbles on very small screens */
+        @media only screen and (max-width: 480px) {
+            .bubble {
+                display: none;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Background bubbles (hidden on mobile) -->
+    <div class="bubble" style="width: 100px; height: 100px; top: 10%; left: 10%;"></div>
+    <div class="bubble" style="width: 150px; height: 150px; top: 60%; left: 80%;"></div>
+    <div class="bubble" style="width: 80px; height: 80px; top: 80%; left: 20%;"></div>
+    <div class="bubble" style="width: 120px; height: 120px; top: 20%; left: 70%;"></div>
+
+    <div class="coming-soon-container animate__animated animate__fadeIn">
+        <!-- Language Toggle Button -->
+        <button class="language-toggle" onclick="toggleLanguage()">العربية</button>
+
+        <!-- Aki Logo -->
+        <img  src="AkiLogo.png" alt="Code With Aki Logo" class="aki-logo">
+
+        <h1 data-en="Code With Aki" data-ar="برمج مع آكي">Code With Aki</h1>
+        <h2 data-en="Coming Soon!" data-ar="قريباً!">Coming Soon!</h2>
+
+            <p data-en="Coding isn't just for engineers and programmers! It's for EVERYONE who wants to be creative, solve puzzles, and build something awesome!" data-ar="علوم الحاسب ليست فقط للمهندسين والمبرمجين! إنها للجميع من يريد أن يكون مبدعاً، يحل الألغاز، ويبني شيئاً مذهلاً!">
+    Coding isn't just for engineers and programmers! It's for **EVERYONE** who wants to be creative, solve puzzles, and build something awesome!
+</p>
+
+        <p data-en="We're building something amazing to make Computer Science fun and accessible for teens! 🚀" data-ar="نحن نبني شيئاً مذهلاً لجعل علوم الحاسب ممتعة ومتاحة للمراهقين! 🚀">We're building something amazing to make Computer Science fun and accessible for teens! 🚀</p>
+
+
+        <p data-en="Get ready for colorful roadmaps, fun projects, and a friendly guide to help you learn coding the right way!" data-ar="استعد لخرائط تعليمية ملونة، مشاريع ممتعة، ودليل ودود لمساعدتك على تعلم البرمجة بالطريقة الصحيحة!">Get ready for colorful roadmaps, fun projects, and a friendly guide to help you learn coding the right way!</p>
+
+        <!-- Countdown Timer -->
+        <div class="countdown">
+            <div class="countdown-item">
+                <span class="countdown-number" id="days">00</span>
+                <span class="countdown-label" data-en="Days" data-ar="أيام">Days</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-label" data-en="Hours" data-ar="ساعات">Hours</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-label" data-en="Minutes" data-ar="دقائق">Minutes</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="seconds">00</span>
+                <span class="countdown-label" data-en="Seconds" data-ar="ثواني">Seconds</span>
+            </div>
+        </div>
+
+        <!-- Notification Form -->
+        <div class="notification-form">
+            <h3 data-en="Get Notified When We Launch! ✨" data-ar="احصل على إشعار عند الإطلاق! ✨">Get Notified When We Launch! ✨</h3>
+            <p data-en="Leave your email below and we'll send you a special message when Code With Aki is ready!" data-ar="اترك بريدك الإلكتروني أدناه وسنرسل لك رسالة خاصة عندما يكون برمج مع آكي جاهزاً!">Leave your email below and we'll send you a special message when Code With Aki is ready!</p>
+
+            <div id="message" class="message"></div>
+
+            <form id="notifyForm" action="https://formspree.io/f/mjkjaaar" method="POST">
+                <div class="form-group">
+                    <label for="name" data-en="Your Name:" data-ar="اسمك:">Your Name:</label>
+                    <input type="text" id="name" name="name" placeholder="What should we call you?" data-placeholder-en="What should we call you?" data-placeholder-ar="ماذا نسميك؟" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" data-en="Your Email:" data-ar="بريدك الإلكتروني:">Your Email:</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" data-placeholder-en="your.email@example.com" data-placeholder-ar="بريدك@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="interest" data-en="What interests you most?" data-ar="ما الذي يهمك أكثر؟">What interests you most?</label>
+                    <select id="interest" name="interest">
+                        <option value="" data-en="Select your interest..." data-ar="اختر ما يهمك...">Select your interest...</option>
+                        <option value="web-dev" data-en="Web Development 🌐" data-ar="تطوير الويب 🌐">Web Development 🌐</option>
+                        <option value="graphic-design" data-en="Graphic Design 🎨" data-ar="التصميم الجرافيكي 🎨">Graphic Design 🎨</option>
+                        <option value="software-dev" data-en="Software Development 💻" data-ar="تطوير البرمجيات 💻">Software Development 💻</option>
+                        <option value="cybersecurity" data-en="Cybersecurity 🔒" data-ar="الأمن السيبراني 🔒">Cybersecurity 🔒</option>
+                        <option value="data-ai" data-en="Data & AI 🤖" data-ar="البيانات والذكاء الاصطناعي 🤖">Data & AI 🤖</option>
+                        <option value="all" data-en="Everything! 🚀" data-ar="كل شيء! 🚀">Everything! 🚀</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="userMessage" data-en="Any suggestions or questions?" data-ar="أي اقتراحات أو أسئلة؟">Any suggestions or questions?</label>
+                    <textarea id="userMessage" name="message" rows="3" placeholder="We'd love to hear what you're excited about!" data-placeholder-en="We'd love to hear what you're excited about!" data-placeholder-ar="نود أن نسمع ما أنت متحمس له!"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" data-en="Notify Me! 🎉" data-ar="أشعرني! 🎉">Notify Me! 🎉</button>
+            </form>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="https://www.instagram.com/codewithaki/" class="social-link " title="Instagram"><img height="70px" src="Instaicon.png"></a>
+            <a href="https://www.tiktok.com/@code.with.aki" class="social-link " title="tiktok"><img height="70px" src="Tikicon.png"></a>
+            <a href="https://www.linkedin.com/company/code-with-aki/" class="social-link " title="linkedin"><img height="70px" src="Linkedinicon.png"></a>
+            <a href="https://x.com/CodeWithAki" class="social-link " title="X"><img height="70px" src="Xicon.png"></a>
+        </div>
+    </div>
+
+    <script>
+        let currentLanguage = 'en';
+
+        // Countdown Timer - Set to next Sunday at 12:00 PM
+        function getNextSunday() {
+            const now = new Date();
+            const nextSunday = new Date();
+
+            // Calculate days until next Sunday (0 = Sunday, 1 = Monday, etc.)
+            const daysUntilSunday = 7 - now.getDay();
+
+            // Set to next Sunday at 12:00 PM
+            nextSunday.setDate(now.getDate() + daysUntilSunday);
+            nextSunday.setHours(12, 0, 0, 0);
+
+            return nextSunday.getTime();
+        }
+
+        const launchDate = getNextSunday();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            if (distance < 0) {
+                // If we passed the Sunday, set to next Sunday
+                const newLaunchDate = getNextSunday();
+                const newDistance = newLaunchDate - now;
+                updateCountdownDisplay(newDistance);
+                return;
+            }
+
+            updateCountdownDisplay(distance);
+        }
+
+        function updateCountdownDisplay(distance) {
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
+        }
+
+        // Language Toggle Function
+        function toggleLanguage() {
+            const container = document.querySelector('.coming-soon-container');
+            const toggleBtn = document.querySelector('.language-toggle');
+
+            if (currentLanguage === 'en') {
+                // Switch to Arabic
+                currentLanguage = 'ar';
+                container.classList.add('rtl');
+                toggleBtn.textContent = 'English';
+                document.title = 'قريباً ✨ برمج مع آكي';
+
+                // Update all translatable elements
+                updateAllTextToArabic();
+            } else {
+                // Switch to English
+                currentLanguage = 'en';
+                container.classList.remove('rtl');
+                toggleBtn.textContent = 'العربية';
+                document.title = 'Coming Soon ✨ Code With Aki';
+
+                // Update all translatable elements
+                updateAllTextToEnglish();
+            }
+        }
+
+        function updateAllTextToArabic() {
+            // Update headings and paragraphs
+            document.querySelectorAll('[data-ar]').forEach(element => {
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    const placeholder = element.getAttribute('data-placeholder-ar');
+                    if (placeholder) {
+                        element.placeholder = placeholder;
+                    }
+                } else if (element.tagName === 'OPTION') {
+                    element.textContent = element.getAttribute('data-ar');
+                } else {
+                    element.textContent = element.getAttribute('data-ar');
+                }
+            });
+        }
+
+        function updateAllTextToEnglish() {
+            // Update headings and paragraphs
+            document.querySelectorAll('[data-en]').forEach(element => {
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    const placeholder = element.getAttribute('data-placeholder-en');
+                    if (placeholder) {
+                        element.placeholder = placeholder;
+                    }
+                } else if (element.tagName === 'OPTION') {
+                    element.textContent = element.getAttribute('data-en');
+                } else {
+                    element.textContent = element.getAttribute('data-en');
+                }
+            });
+        }
+
+        // Form Submission Handler
+        document.getElementById('notifyForm').addEventListener('submit', function(e) {
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                interest: document.getElementById('interest').value,
+                message: document.getElementById('userMessage').value
+            };
+
+            const messageDiv = document.getElementById('message');
+
+            // Simple validation
+            if (!formData.name || !formData.email) {
+                e.preventDefault(); // Only prevent default if validation fails
+                showMessage(
+                    currentLanguage === 'en'
+                    ? 'Please fill in all required fields!'
+                    : 'يرجى ملء جميع الحقول المطلوبة!',
+                    'error'
+                );
+                return;
+            }
+
+            // Show success message but don't prevent form submission
+            showMessage(
+                currentLanguage === 'en'
+                ? `Thanks ${formData.name}! 🎉 We'll email you when we launch!`
+                : `شكراً ${formData.name}! 🎉 سنرسل لك بريداً عند الإطلاق!`,
+                'success'
+            );
+
+            // Let Formspree handle the actual submission
+        });
+
+        function showMessage(text, type) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = text;
+            messageDiv.className = `message ${type}`;
+            messageDiv.style.display = 'block';
+
+            // Auto-hide success messages after 5 seconds
+            if (type === 'success') {
+                setTimeout(() => {
+                    messageDiv.style.display = 'none';
+                }, 5000);
+            }
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+
+        // Add some floating animation to the bubbles
+        document.addEventListener('DOMContentLoaded', function() {
+            const bubbles = document.querySelectorAll('.bubble');
+            bubbles.forEach((bubble, index) => {
+                // Randomize animation duration and delay
+                const duration = 15 + Math.random() * 10;
+                const delay = Math.random() * 5;
+                bubble.style.animation = `float ${duration}s ${delay}s infinite ease-in-out`;
+            });
+        });
+    </script>
+  </body>
+</html>
